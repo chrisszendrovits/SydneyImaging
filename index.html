@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Sydney Imaging</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="styles/app.css" type="text/css" />
+    <link rel="stylesheet" href="styles/navMenu.css" type="text/css" />
+    <script data-main="scripts/main" src="scripts/require.js"></script>
+    <script>
+        require(['app'], function (app) {
+            $(document).ready(function () {
+                app.navMenu.pageItemClick('home', 'navItemHome');
+            });
+            window.app = app;
+        });
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div id="navMenuLoader"></div>
+        <div id="mainContent">
+            <div id="gallery">
+                <div id="slider">
+                    <i class="fa fa-chevron-circle-left fa-3x sliderIcon" onclick="window.app.gallery.sliderClick('left')"></i>
+                    <div id="sliderImageContainer">
+                        <img id="sliderImage" />
+                    </div>
+                    <i class="fa fa-chevron-circle-right fa-3x sliderIcon" onclick="window.app.gallery.sliderClick('right')"></i>
+                    <div style="clear: both"></div>
+                </div>
+                <div id="thumbnails" class="hide" />
+            </div>
+            <div id="normalPageItem" display="none" />
+        </div>
+    </div>
+</body>
+</html>

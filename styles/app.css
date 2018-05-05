@@ -1,0 +1,50 @@
+﻿body {
+    margin: 0px;
+}
+
+.page {
+    max-width: 99%;
+    position:relative;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+#mainContent {
+    width: 80%;
+    overflow: hidden;
+    display: inline;
+}
+
+#gallery, #slider, #sliderImageContainer, #sliderImage {
+    overflow: hidden;
+    display: inline;
+}
+
+#thumbnails {
+    width: 800px;
+    white-space: normal;
+    display: inline-block;
+    border: 1px solid blue;
+}
+
+.sliderIcon {
+    color: #DCDCDC;
+    /*
+    position: relative;
+    top: -300px;
+    margin: 0px 10px 0px 10px;*/
+}
+
+.sliderIcon:hover {
+    color: #666;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+#home, #contact, #digitalRestoration, #printDesign, #scanning {
+    overflow: hidden;
+    display: inline;
+}

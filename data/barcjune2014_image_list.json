@@ -1,0 +1,26 @@
+﻿[
+  {
+    "filename": "images/fashion.jpg",
+    "thumbnail": "images/fashion.jpg",
+    "title": "Fashion Jpg",
+    "description": "fashion Desc Jpg",
+    "thumbnailWidth": "400px",
+    "thumbnailHeight": "300px"
+  },
+  {
+    "filename": "images/examplelayer2.jpg",
+    "thumbnail": "images/examplelayer2.jpg",
+    "title": "examplelayer2 Jpg",
+    "description": "examplelayer2 Desc Jpg",
+    "thumbnailWidth": "400px",
+    "thumbnailHeight": "300px"
+  },
+  {
+    "filename": "images/fes7-constr2.jpg",
+    "thumbnail": "images/fes7-constr2.jpg",
+    "title": "fes7-constr2 Jpg",
+    "description": "fes7-constr2 Desc Jpg",
+    "thumbnailWidth": "400px",
+    "thumbnailHeight": "300px"
+  }
+]

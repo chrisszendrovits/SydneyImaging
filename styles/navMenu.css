@@ -1,0 +1,61 @@
+﻿#navMenuContainer {
+    width: 18%;
+    display: inline-block;
+    vertical-align:top;
+    margin-right: 40px;
+}
+
+.logo {
+    width: 100%;
+    margin: 30px 0px 30px 0px;
+    text-align: center;
+}
+
+.navItem {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.navSubItem {
+    margin-top: 30px;
+    text-align: center;
+}
+
+a:hover {
+    color: #999;
+}
+
+.navItemLink {
+    font-family: Mona Lisa Solid ITC TT;
+    color: #666;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.navItemSubLink {
+    font-family: Mona Lisa Solid ITC TT;
+    color: #666;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.chevronIcon {
+    float: right;
+    color: #FFF;
+}
+
+.hide {
+    display: none;
+}
+
+.active {
+    color: #999;
+}
+
+#navMenuLoader {
+    overflow: hidden;
+    display: inline;
+}
