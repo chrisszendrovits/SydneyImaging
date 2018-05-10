@@ -1,0 +1,41 @@
+﻿#gallery { 
+    width: 100%;
+    display: table; 
+}
+        
+#slider { 
+    width: inherit;
+    display: table-row; 
+}
+
+.sliderIconLeft, .sliderIconRight {
+    position: absolute;
+    z-index: 1000;
+    color: #DCDCDC;
+}   
+
+.sliderIconLeft:hover, .sliderIconRight:hover {
+    color: #666;
+    cursor: pointer;
+} 
+/*
+.sliderIconLeft { 
+
+    left: 100px;
+    top: 100px;
+}
+
+.sliderIconRight { 
+
+    left: 400px;
+    top: 100px;
+}
+*/      
+#sliderImageContainer { 
+    display: table-cell;
+    text-align: center;
+}
+
+#thumbnails { 
+    display: table-row; 
+}

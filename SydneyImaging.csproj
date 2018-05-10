@@ -22,6 +22,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="gallery.html" />
     <Content Include="home.html" />
     <Content Include="scanning.html" />
     <Content Include="print_design.html" />
@@ -33,6 +34,8 @@
     <Content Include="scripts\jquery.min.js" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\require.js" />
+    <Content Include="scripts\viewportSize.js" />
+    <Content Include="styles\gallery.css" />
     <Content Include="styles\navMenu.css" />
     <Content Include="styles\app.css" />
     <Content Include="index.html" />

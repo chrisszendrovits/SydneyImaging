@@ -7,6 +7,7 @@
 
         Preloader.prototype.init = function () {
             $('#navMenuLoader').load('navMenu.html');
+            $('#galleryLoader').load('gallery.html');
         };
 
         return Preloader;

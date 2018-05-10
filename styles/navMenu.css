@@ -1,11 +1,4 @@
-﻿#navMenuContainer {
-    width: 18%;
-    display: inline-block;
-    vertical-align:top;
-    margin-right: 40px;
-}
-
-.logo {
+﻿.logo {
     width: 100%;
     margin: 30px 0px 30px 0px;
     text-align: center;
@@ -53,9 +46,4 @@ a:hover {
 
 .active {
     color: #999;
-}
-
-#navMenuLoader {
-    overflow: hidden;
-    display: inline;
 }

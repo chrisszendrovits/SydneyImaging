@@ -2,49 +2,16 @@
     margin: 0px;
 }
 
-.page {
-    max-width: 99%;
-    position:relative;
-    overflow:hidden;
-    white-space: nowrap;
-}
-
-#mainContent {
-    width: 80%;
+.navMenu {
+    height: 100%;
+    width: 280px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
     overflow: hidden;
-    display: inline;
 }
 
-#gallery, #slider, #sliderImageContainer, #sliderImage {
-    overflow: hidden;
-    display: inline;
-}
-
-#thumbnails {
-    width: 800px;
-    white-space: normal;
-    display: inline-block;
-    border: 1px solid blue;
-}
-
-.sliderIcon {
-    color: #DCDCDC;
-    /*
-    position: relative;
-    top: -300px;
-    margin: 0px 10px 0px 10px;*/
-}
-
-.sliderIcon:hover {
-    color: #666;
-    cursor: pointer;
-}
-
-.hide {
-    display: none;
-}
-
-#home, #contact, #digitalRestoration, #printDesign, #scanning {
-    overflow: hidden;
-    display: inline;
+.mainContent {
+    margin-left: 300px;
 }

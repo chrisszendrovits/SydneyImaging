@@ -51,8 +51,6 @@
                 function (result) {
                     var image = _app.imageLoader.images[_app.gallery.sliderIndex = 0]
                     _app.gallery.sliderImageSwap(image);
-                    _app.gallery.show();
-                    $('#normalPageItem').css('display', 'none');
                 },
                 function (result) {
                     alert(result);
@@ -61,9 +59,7 @@
 
         NavMenu.prototype.pageItemClick = function (pageType, id) {
             this.setActiveNavItem(id);
-            this.gallery.hide();
             $('#normalPageItem').load(pageType + '.html');
-            $('#normalPageItem').css('display', 'inline');
         };
 
         return NavMenu;
