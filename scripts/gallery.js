@@ -5,9 +5,11 @@
         this.imageLoader = null;
         this.sliderIndex = 0;
         this.sliderIconSet = false;
+        this.autoScale = false;
 
-        function Gallery(imgLoader) {
+        function Gallery(imgLoader, autoScale) {
             this.imageLoader = imgLoader;
+            this.autoScale = autoScale;
         }
 
         Gallery.prototype.sliderClick = function (direction) {
@@ -31,6 +33,7 @@
 
         Gallery.prototype.sliderImageSwap = function (image) {
             var imageElement = $('#sliderImage'), container = $('#slider');
+            container.removeClass("hideSlider");
             var _app = this;
 
             var dimensions = _app.getImageDimensions(
@@ -40,11 +43,20 @@
                 $(window).height(),
                 true);
 
+            dimensions.height -= 10
+
+            var imageWidth = image.width, imageHeight = image.height;
+
+            if (this.autoScale) {
+                imageWidth = dimensions.width;
+                imageHeight = dimensions.height;
+            }
+
             imageElement.fadeOut('normal', function () {
                 imageElement.attr('src', image.filename);
                 imageElement.attr('alt', image.description);
-                imageElement.attr('width', dimensions.width);
-                imageElement.attr('height', dimensions.height -= 10);
+                imageElement.attr('width', imageWidth);
+                imageElement.attr('height', imageHeight);
                 imageElement.css("left", dimensions.targetleft);
                 imageElement.css("top", dimensions.targettop);
                 imageElement.attr('data-index', _app.sliderIndex);
@@ -56,14 +68,12 @@
             });
 
             if (!this.sliderIconSet) {
-                debugger;
                 var gallery = $('#gallery'), iconLeft = $('.sliderIconLeft'), iconRight = $('.sliderIconRight');
 
-                iconLeft.css("left", $(window).width() - gallery.width());
+                iconLeft.css("left", ($(window).width() - gallery.width()) + 10);
                 iconLeft.css("top", dimensions.height / 2);
-                iconRight.css("left", $(window).width() - 80);
+                iconRight.css("left", $(window).width() - 50);
                 iconRight.css("top", dimensions.height / 2);
-
 
                 this.sliderIconSet = true;
             }
@@ -136,35 +146,32 @@
 
             if (slider.is(':visible')) {
                 slider.fadeOut('normal', function () {
-                    //slider.addClass('hide');
-                    //slider.css('display', 'none');
-                    //thumbnails.removeClass('hide');
-                    //thumbnails.css('display', 'inline-block');
                     thumbnails.fadeIn('fast');
                 });
             }
             else {
                 thumbnails.fadeOut('normal', function () {
-                    //thumbnails.addClass('hide');
-                    //thumbnails.css('display', 'none');
-                    //slider.removeClass('hide');
-                    //slider.css('display', 'inline-block');
                     slider.fadeIn('fast');
                 });
             }
         };
 
-        //Gallery.prototype.show = function () {
-        //    $('#gallery').css('display', 'inline');
-        //};
+        Gallery.prototype.toggleGallery = function (showGallery) { 
+            var slider = $('#slider'), thumbnails = $('#thumbnails');
 
-        //Gallery.prototype.hide = function () {
-        //    $('#gallery').css('display', 'none');
-        //};
+            if (showGallery == true) {
+                slider.removeClass('hideSlider');
+                slider.addClass('hideThumbnails');
+            }
+            else {
+                slider.addClass('hideSlider');
+                slider.addClass('hideThumbnails');
+            }
+        };
 
         return Gallery;
 
     }());
 
-    return new Gallery(imageLoader);
+    return new Gallery(imageLoader, true); // autoScale = true
 });

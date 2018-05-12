@@ -51,15 +51,32 @@
                 function (result) {
                     var image = _app.imageLoader.images[_app.gallery.sliderIndex = 0]
                     _app.gallery.sliderImageSwap(image);
+                    _app.toggleMainContentTo('Gallery');
                 },
                 function (result) {
                     alert(result);
                 });
         };
 
+        NavMenu.prototype.toggleMainContentTo = function (pageType) {
+            var pageItem = $('#normalPageItem');
+
+            if (pageType == 'Gallery') {
+                pageItem.addClass('hidePageItem');
+                this.gallery.toggleGallery(true);
+            }
+            else {
+                pageItem.removeClass('hidePageItem');
+                this.gallery.toggleGallery(false);
+            }
+        }
+
         NavMenu.prototype.pageItemClick = function (pageType, id) {
+            var pageItem = $('#normalPageItem');
+
             this.setActiveNavItem(id);
-            $('#normalPageItem').load(pageType + '.html');
+            pageItem.load(pageType + '.html');
+            this.toggleMainContentTo('Page')
         };
 
         return NavMenu;

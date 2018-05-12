@@ -15,3 +15,7 @@
 .mainContent {
     margin-left: 300px;
 }
+
+.hidePageItem {
+    display: none;
+}

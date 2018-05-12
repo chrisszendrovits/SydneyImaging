@@ -18,19 +18,7 @@
     color: #666;
     cursor: pointer;
 } 
-/*
-.sliderIconLeft { 
-
-    left: 100px;
-    top: 100px;
-}
-
-.sliderIconRight { 
-
-    left: 400px;
-    top: 100px;
-}
-*/      
+      
 #sliderImageContainer { 
     display: table-cell;
     text-align: center;
@@ -38,4 +26,8 @@
 
 #thumbnails { 
     display: table-row; 
+}
+
+.hideSlider, hideThumbnails {
+    display: none !important;
 }
