@@ -25,7 +25,13 @@
 }
 
 #thumbnails { 
-    display: table-row; 
+    display: table;
+    width: 830px;
+}
+
+.thumbnailImage {
+    width: 400px;
+    margin-top: 10px;
 }
 
 .hideSlider, hideThumbnails {

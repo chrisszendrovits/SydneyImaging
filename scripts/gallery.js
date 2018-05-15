@@ -120,18 +120,32 @@
             return result;
         };
 
+        Gallery.prototype.calculateThumbnailHeight = function (imageWidth, imageHeight, thumbnailWidth) {
+            return (imageHeight / imageWidth) * thumbnailWidth;
+        };
+
         Gallery.prototype.loadThumbnails = function () {
             var _app = this;
 
             $.each(_app.imageLoader.images, function (index, item) {
+                var thumbnailHeight = _app.calculateThumbnailHeight(item.width, item.height, 400);
+                var floatValue = 'left', marginAttr = 'margin-left';
+
+                if (index % 2) {
+                    floatValue = 'right';
+                    marginAttr = 'margin-right';
+                }
 
                 var markup = "<img src='" + item.thumbnail +
-                                "' width='" + item.thumbnailWidth +
-                                "' height='" + item.thumbnailHeight +
+                                "' id='thumbnail_" + index +
+                                "' class='thumbnailImage'" +
+                                "' height='" + thumbnailHeight +
                                 "' alt='" + item.description + "' />";
 
                 var img = $(markup);
                 img.attr('data-index', index);
+                img.css('float', floatValue);
+                img.css(marginAttr, '10px');
                 img.click(function (event) {
                     var index = event.currentTarget.dataset.index;
                     _app.sliderImageSwap(_app.imageLoader.images[index]);
