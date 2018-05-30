@@ -38,5 +38,55 @@
     "height": "651px",
     "thumbnailWidth": "320px",
     "thumbnailHeight": "217px"
+  },
+    {
+    "filename": "images/amigos.jpg",
+    "thumbnail": "images/amigos.jpg",
+    "title": "Amigos Jpg",
+    "description": "Amigos Desc Jpg",
+    "width": "960px",
+    "height": "540px",
+    "thumbnailWidth": "320px",
+    "thumbnailHeight": "217px"
+  },
+  {
+    "filename": "images/city.jpg",
+    "thumbnail": "images/city.jpg",
+    "title": "City",
+    "description": "City Desc Jpg",
+    "width": "1200px",
+    "height": "1200px",
+    "thumbnailWidth": "320px",
+    "thumbnailHeight": "217px"
+  },
+    {
+    "filename": "images/constr6.jpg",
+    "thumbnail": "images/constr6.jpg",
+    "title": "constr6",
+    "description": "constr6 Desc Jpg",
+    "width": "1920px",
+    "height": "1080px",
+    "thumbnailWidth": "320px",
+    "thumbnailHeight": "217px"
+  },
+    {
+    "filename": "images/discover1_detail-1.jpg",
+    "thumbnail": "images/discover1_detail-1.jpg",
+    "title": "discover1_detail-1",
+    "description": "discover1_detail-1 Desc Jpg",
+    "width": "1200px",
+    "height": "695px",
+    "thumbnailWidth": "320px",
+    "thumbnailHeight": "217px"
+  },
+    {
+    "filename": "images/face.jpg",
+    "thumbnail": "images/face.jpg",
+    "title": "face",
+    "description": "face Desc Jpg",
+    "width": "1920px",
+    "height": "1080px",
+    "thumbnailWidth": "320px",
+    "thumbnailHeight": "217px"
   }
 ]

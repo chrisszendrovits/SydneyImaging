@@ -125,16 +125,14 @@
         };
 
         Gallery.prototype.loadThumbnails = function () {
+            var thumbnails = $('#thumbnails');
+            var lowestY = -1, lowestFloat = '';
             var _app = this;
 
-            $.each(_app.imageLoader.images, function (index, item) {
-                var thumbnailHeight = _app.calculateThumbnailHeight(item.width, item.height, 400);
-                var floatValue = 'left', marginAttr = 'margin-left';
+            thumbnails.empty();
 
-                if (index % 2) {
-                    floatValue = 'right';
-                    marginAttr = 'margin-right';
-                }
+            $.each(_app.imageLoader.images, function (index, item) {
+                var thumbnailHeight = _app.calculateThumbnailHeight(parseInt(item.width), parseInt(item.height), 400);
 
                 var markup = "<img src='" + item.thumbnail +
                                 "' id='thumbnail_" + index +
@@ -144,14 +142,26 @@
 
                 var img = $(markup);
                 img.attr('data-index', index);
-                img.css('float', floatValue);
-                img.css(marginAttr, '10px');
                 img.click(function (event) {
-                    var index = event.currentTarget.dataset.index;
-                    _app.sliderImageSwap(_app.imageLoader.images[index]);
+                    _app.sliderIndex = event.currentTarget.dataset.index;
+                    _app.sliderImageSwap(_app.imageLoader.images[_app.sliderIndex]);
                     _app.toggleSlider();
                 });
-                $('#thumbnails').append(img);
+                thumbnails.append(img);
+
+                var currentY = img.position().top + thumbnailHeight;
+                var nextFloat = 'left', nextMargin = 'margin-right';
+
+                if (lowestFloat == 'left') {
+                    nextFloat = 'right';
+                    nextMargin = 'margin-left';
+                }
+                img.css('float', nextFloat);
+
+                if (currentY > lowestY) {
+                    lowestFloat = nextFloat;
+                    lowestY = currentY;
+                }
             });
         };
 
